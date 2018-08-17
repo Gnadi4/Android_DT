@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.omd.beta02">
+
+    //카메라 기능에 대한 권한 설정
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    //저장소 쓰기 기능에 대한 권한 설정
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    //저장소 읽기 기능에 대한 권한 설정
+    //갤러리로부터의 데이터 불러오기 기능의 오류로 인한 허가권 설정
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    //android:hardwareAccelerated="false" 를 통한 기기작동 오류에 대한 보완, 기기마다 갤러리 불러오기 및
+    //두번째 촬영부터 이미지 뷰에 이미지가 표시 되지않는 오류가 발생하였기에 코드를 추가 시켜 주었다.
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:hardwareAccelerated="false">
+
+        //촬영된 사진에 대한 provider 즉, 공급자 역할을 해준다 resource 코드의 file_paths는 이미지 파일이 저장될 위치를 지정 해주는 역할 을 한다.
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.omd.beta02.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".contentlist"
+            android:label="content list"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+    //path로 설정 해준 곳에 파일이 생성 되고 그 안에 이미지가 저장 되어진다
+    <external-path name="my_images" path="DCIM" />
+
+</paths>
