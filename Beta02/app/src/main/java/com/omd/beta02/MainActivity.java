@@ -368,10 +368,10 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    protected  void onActivityResult(int requestCode, int resultCode, Intent data){
+    protected  void onActivityResult(int requestCode, int resultCode, Intent data) {
         //super.onActivityResult(resultCode, resultCode, data);
 
-        if(requestCode==CAMERA_CODE){
+        if (requestCode == CAMERA_CODE) {
             Button button_save1 = (Button) findViewById(R.id.button_save);
             ImageView imageView = (ImageView) findViewById(R.id.picture_view);
             imageView.setImageBitmap(BitmapFactory.decodeFile(mCurrentPhotoPath));
