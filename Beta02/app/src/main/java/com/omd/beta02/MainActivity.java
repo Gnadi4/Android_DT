@@ -266,30 +266,19 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        //FragmentManager fragmentManager = getFragmentManager();
+
         if (id == R.id.nav_gallery) {
+
             Intent intent = new Intent(Intent.ACTION_PICK);
             intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
             intent.setType("image/*");
             startActivityForResult(intent, GALLERY_CODE);
 
-            /*setTitle("camera");
-            FirstFragment fragment = new FirstFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.content_frame, fragment, "FirstFragment");
-            fragmentTransaction.commit();*/
         } else if (id == R.id.nav_tags) {
-
 
             Intent intent = new Intent(MainActivity.this, contentlist.class);
             startActivity(intent);
 
-
-            /*setTitle("gallery");
-            SecondFragment fragment = new SecondFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.content_frame, fragment, "SecondFragment");
-            fragmentTransaction.commit();*/
         } else if (id == R.id.nav_slideshow) {
 
 

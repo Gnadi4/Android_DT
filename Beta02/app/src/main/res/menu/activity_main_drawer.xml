@@ -15,7 +15,7 @@
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="내용으로 검색" />
+            android:title="검색" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
