@@ -141,6 +141,7 @@ public class contentlist extends AppCompatActivity{
     private void showDialogUpdate(Activity activity){
 
         final Dialog dialog = new Dialog(activity);
+
         //content_update xml 파일 을 dialog기능을 통해 불러온다.
         dialog.setContentView(R.layout.content_update);
         dialog.setTitle("Update");
@@ -170,6 +171,7 @@ public class contentlist extends AppCompatActivity{
         editText_tags3.setSelection(editText_tags3.length());
 
         dialog.show();
+
         //업데이트 다이얼로그에서 이미지 부분을 클릭할 시 다른 이미지로 변경 할 수 있는 코드
         imageView_update.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -180,6 +182,7 @@ public class contentlist extends AppCompatActivity{
                 startActivityForResult(intent, GALLERY_CODE);
             }
         });
+
         //새로 작성되거나 지워진 내용을 데이터베이스로 업데이트 시키기 위한 버튼 코드
         button_update.setOnClickListener(new  View.OnClickListener(){
             @Override
@@ -255,9 +258,6 @@ public class contentlist extends AppCompatActivity{
         if (requestCode == GALLERY_CODE) {
 
             uri1 = String.valueOf(Uri.parse(getRealPathFromURI(data.getData())));
-            //galleryUri = Uri.parse(getRealPathFromURI(Uri.parse(uri1)));
-
-            //ImageView imageView = (ImageView) findViewById(R.id.imageView_update);
 
             imageView_update.setScaleType(ImageView.ScaleType.FIT_XY);
 

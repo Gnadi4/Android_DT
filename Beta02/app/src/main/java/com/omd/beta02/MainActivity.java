@@ -88,16 +88,6 @@ public class MainActivity extends AppCompatActivity
         //앞으로 사진출력용으로 사용 될 xml에 대한 선언을 해준다.
         final ImageView imageView = (ImageView) findViewById(R.id.picture_view);
 
-        /*//갤러리 불러오기 기능으로 사용하고자 하였던 버튼 기능
-        Button gallery = (Button)findViewById(R.id.button_gallery);
-        gallery.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                imageView.setImageResource(0);
-                //pickUpPicture();
-            }
-        });*/
-
         //button_save2는 현재 view에 표시되고있는 사진과 추가된 태그를 데이터 베이스로 넘겨주는 기능을 한다.
         Button button_save2 = (Button) findViewById(R.id.button_save2);
 
@@ -194,17 +184,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        /*//아직 구현 되지 않은 기능
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -273,27 +252,13 @@ public class MainActivity extends AppCompatActivity
             intent.setType("image/*");
             startActivityForResult(intent, GALLERY_CODE);
 
-            /*setTitle("camera");
-            FirstFragment fragment = new FirstFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.content_frame, fragment, "FirstFragment");
-            fragmentTransaction.commit();*/
         } else if (id == R.id.nav_tags) {
-
 
             Intent intent = new Intent(MainActivity.this, contentlist.class);
             startActivity(intent);
 
-
-            /*setTitle("gallery");
-            SecondFragment fragment = new SecondFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.content_frame, fragment, "SecondFragment");
-            fragmentTransaction.commit();*/
         } else if (id == R.id.nav_slideshow) {
-
-
-
+            
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
@@ -382,7 +347,6 @@ public class MainActivity extends AppCompatActivity
             //절대경로로 받아오기
             //바로 아래의 주석 처리 된 코드가 그냥 uri를 받아와 그 uri 정보를 통해 갤러리로부터 이미지 불러오기 기능을
             //구현하고자 하였던 코드이다.
-            //uri = data.getData();
             //따라서 아래의 두줄과 같이 uri를 똑같이 선언 해준후 그 uri를 절대 경로를 얻는 메소드(미리 선언해 놓은)를 이용해
             //절대 경로를 얻어 언제 어디서나 같은 경로로 이미지 파일을 얻어올 수 있게 해 준 것이다.
             uri2 = data.getData();

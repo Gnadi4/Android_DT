@@ -12,7 +12,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="0dp"
-        android:gravity="center"></GridView>
+        android:gravity="center"
+        android:layout_alignParentLeft="true"></GridView>
     //Grid view란 격자 모양으로 아이템을 배치 할 수 있는 컨테이너 역할 을 해주는 view이다
     //이 view 안에 격자 모양으로 넣어줄 content에 대해서 content_items에서 구현 해줄 것이다.
 </RelativeLayout>
